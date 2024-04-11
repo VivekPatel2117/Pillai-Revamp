@@ -8,10 +8,18 @@ module.exports = {
   theme: {
     extend: {
       backgroundImage: {
-        "gradient-radial": "radial-gradient(var(--tw-gradient-stops))",
-        "gradient-conic":
-          "conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))",
+        "background":"url('../images/pillai-campus.jpg')",
+        "mapBg":"url('../images/map_bg.png')",
+        "feature":"url('../images/bg.png')",
+        "component":"url('../images/Component.png')",
       },
+      colors:{
+        "marron":"rgb(150 0 0 / 55%)",
+        "marronDark":"#910000",
+        "beigeLight":"rgb(219 165 115 / 60%)",
+        "beigeDark":"#DBA573",
+        "BlueDark":"#020923"
+      }
     },
   },
   plugins: [],
