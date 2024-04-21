@@ -12,9 +12,8 @@ import News1 from "../images/news-1.png";
 import News2 from "../images/news-2.png";
 import News3 from "../images/news-3.png";
 import Workshop from "../images/workshops.png";
-import { FaInstagram,FaLinkedin,FaFacebook,FaYoutube } from "react-icons/fa";
-import { FaSquareXTwitter } from "react-icons/fa6";
 import ImageWithHoverText from "./components/ImageWithHoverText/page";
+import Footer from './components/footer/page';
 export default function Home() {
   return (
     <>
@@ -43,7 +42,7 @@ export default function Home() {
     <div className="bg-component text-white sm:text-black sm:bg-mapBg bg-cover">
     <div className="grid grid-cols-1 md:grid-cols-2 gap-4 p-4">
       <div className="left">
-        <h1 className="text-sm sm:text-5xl text-center font-bold">The Beginning</h1>
+        <h1 className="text-sm sm:text-5xl text-center font-bold text-marronDark">The Beginning</h1>
         <br />
         <ul className="list-disc pl-4 text-sm sm:text-2xl">
           <li>Established legacy of over 25 years</li>
@@ -121,10 +120,10 @@ export default function Home() {
       </div>
      </div>
      <div className="academics">
-      <h1 className="text-5xl font-bold p-8 text-marronDark">Academics And Facility ----------</h1>
+      <h1 className="text-5xl font-bold p-8 text-marronDark bg-mapBg">Academics And Facility ----------</h1>
     <div className="grid grid-cols-1 p-4 gap-6 md:grid-cols-3 mb-10">
     <div className="col1 h-auto bg-orange-50">
-      <h1 className="p-2 bg-marronDark  font-bold">Bachelor's Program</h1>
+      <h1 className="p-2 bg-marronDark text-white font-bold">Bachelor's Program</h1>
       <ul className="pl-8 list-disc">
         <li className="hover:underline">B.Com</li>
         <li className="hover:underline">B.Com.A&F</li>
@@ -142,18 +141,16 @@ export default function Home() {
       </ul>
     </div>
     <div className="col2 h-auto bg-orange-50">
-      <div className="row1 mb-2 h-auto">
-        <h1 className="p-2 bg-marronDark font-bold">Ph.D Program</h1>
+      <div className="row1 mb-8 h-auto">
+        <h1 className="p-2 bg-marronDark font-bold text-white">Ph.D Program</h1>
         <ul className="pl-8 list-disc">
           <li className="hover:underline">Business Policy & Administration</li>
           <li className="hover:underline">Accountancy</li>
           <li className="hover:underline">Business Economics</li>
         </ul>
       </div>
-      <hr /><hr /><hr /><hr /><hr /><hr /><hr /><hr />
-      {/* <br /> */}
-      <div className="row2">
-        <h1 className="p-2 bg-marronDark font-bold">PG Diploma</h1>
+      <div className="row2 mt-8">
+        <h1 className="p-2 bg-marronDark font-bold text-white">PG Diploma</h1>
         <ul className="pl-8 list-disc">
           <li className="hover:underline">PG Diploma in HR Analytics</li>
           <li className="hover:underline">PG Diploma in Event Management</li>
@@ -164,7 +161,7 @@ export default function Home() {
       </div>
     </div>
     <div className="col3 h-auto bg-orange-50">
-      <h1 className="p-2 bg-marronDark font-bold">Masters Program</h1>
+      <h1 className="p-2 bg-marronDark font-bold text-white">Masters Program</h1>
       <ul className="pl-8 list-disc">
         <li className="hover:underline">M.A. M.C.J</li>
         <li className="hover:underline">M.Com</li>
@@ -176,7 +173,7 @@ export default function Home() {
     </div>
   </div>
   <div className="news-events">
-    <div className="head font-bold text-3xl p-8 bg-marronDark">NEWS AND EVENTS</div>
+    <div className="head font-bold text-3xl p-8 bg-marronDark text-white">NEWS AND EVENTS</div>
     <div className="grid grid-cols-1 md:grid-cols-3 gap-4 p-2">
     <div className="bg-red-50 sm:bg-none">
     <ImageWithHoverText
@@ -225,67 +222,7 @@ export default function Home() {
          </div>
        </div>
     </div>
-    <div className="footer text-white bg-marronDark">
-    <div className="grid grid-cols-1 md:grid-cols-3 gap-4 p-2 mb-20">
-    <div className="div-1">
-          <div className="content p-2 ">
-            <h1 className="text-2xl">Contact</h1>
-            <hr />
-            <h1 className="mt-2">Pillai College of Arts Commerce and Science</h1>
-          <ul className="leading-8">
-            <li>Dr. K. M. Vasudevan Pillai Campus</li>
-            <li>Plot No. 10, Sector 16</li>
-            <li>New Panvel</li>
-            <li>Navi Mumbai - 410 206</li>
-            <li>Maharashtra,India</li>
-            <li>022-2745 1700/ 6100/ 6030/ <br /> 2748 1764</li>
-            <li className="hover:underline">www.pcacs.ac.in</li>
-            <li className="Hover:underline">pcacs@mes.ac.in</li>
-            <li className="hover:underline">admissions@mes.ac.in</li>
-          </ul>
-          </div>
-        </div>
-        <div className="div-2">
-          <div className="content p-2">
-            <h1 className="text-2xl">Online Portals</h1>
-            <hr />
-            <ul className="mt-4 leading-10">
-              <li className="hover:underline">Online Railway Concession</li>
-              <li className="hover:underline">Online Student Portal</li>
-              <li className="hover:underline">Online Attendance Portal</li>
-              <li className="hover:underline">Online Library Portal</li>
-            </ul>
-          </div>
-        </div>
-        <div className="div-3">
-          <div className="content p-2">
-            <h1 className="text-2xl">Quick Links</h1>
-            <hr />
-            <ul className="leading-10">
-              <li className="hover:underline">About Us</li>
-              <li className="hover:underline">Programs Offered</li>
-              <li className="hover:underline">Admissions</li>
-              <li className="hover:underline">IQAC</li>
-              <li className="hover:underline">Community</li>
-            </ul>
-          </div>
-        </div>
-    </div>
-    <div className="flex justify-center">
-    <div className="icons flex justify-between w-1/3">
-      <FaInstagram
-      size={75}/>
-      <FaLinkedin
-      size={75}/>
-      <FaFacebook
-      size={75}/>
-      <FaSquareXTwitter
-      size={75}/>
-      <FaYoutube
-      size={75}/>
-    </div>
-    </div>
-  </div>
+   <Footer/>
     </>
   );
 }
