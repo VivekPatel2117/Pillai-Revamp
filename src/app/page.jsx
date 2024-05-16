@@ -34,7 +34,6 @@ export default function Home() {
         src={PillaiLogo1}
         sizes="(max-width: 250px)"
         height={250}
-        // className="w-full h-auto"
       />
     </div>
     
