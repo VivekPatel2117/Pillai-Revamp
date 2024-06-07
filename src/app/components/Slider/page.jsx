@@ -1,122 +1,50 @@
-// "use client"
-// import React, { useState, useEffect } from "react";
+"use client"
+import React, { useState, useRef } from 'react';
+export default function Page({ images = [] }) {
+    const [currentSlide, setCurrentSlide] = useState(0);
+    const touchStartX = useRef(null);
 
-// import "./page.css";
+    const nextSlide = () => {
+        setCurrentSlide(prevSlide => (prevSlide === images.length - 1 ? 0 : prevSlide + 1));
+    };
 
-// function CustomCarousel({ children }) {
-//   const [activeIndex, setActiveIndex] = useState(0);
-//   const [slideDone, setSlideDone] = useState(true);
-//   const [timeID, setTimeID] = useState(null);
-// const [childrenState,setChildrenState]=useState([]);
-// setChildrenState(children);
-// console.log(childrenState)
-//   useEffect(() => {
-//     if (slideDone) {
-//       setSlideDone(false);
-//       setTimeID(
-//         setTimeout(() => {
-//           slideNext();
-//           setSlideDone(true);
-//         }, 5000)
-//       );
-//     }
-//   }, [slideDone]);
+    const prevSlide = () => {
+        setCurrentSlide(prevSlide => (prevSlide === 0 ? images.length - 1 : prevSlide - 1));
+    };
 
-//   const slideNext = () => {
-//     setActiveIndex((val) => {
-//       if (val >= children.length - 1) {
-//         return 0;
-//       } else {
-//         return val + 1;
-//       }
-//     });
-//   };
+    const handleTouchStart = e => {
+        touchStartX.current = e.touches[0].clientX;
+    };
 
-//   const slidePrev = () => {
-//     setActiveIndex((val) => {
-//       if (val <= 0) {
-//         return children.length - 1;
-//       } else {
-//         return val - 1;
-//       }
-//     });
-//   };
+    const handleTouchMove = e => {
+        const touchEndX = e.touches[0].clientX;
+        const diffX = touchStartX.current - touchEndX;
 
-//   const AutoPlayStop = () => {
-//     if (timeID > 0) {
-//       clearTimeout(timeID);
-//       setSlideDone(false);
-//     }
-//   };
+        if (Math.abs(diffX) > 50) {
+            if (diffX > 0) {
+                nextSlide();
+            } else {
+                prevSlide();
+            }
+        }
+    };
 
-//   const AutoPlayStart = () => {
-//     if (!slideDone) {
-//       setSlideDone(true);
-//     }
-//   };
-
-//   return (
-//     <div
-//       className="container__slider"
-//       onMouseEnter={AutoPlayStop}
-//       onMouseLeave={AutoPlayStart}
-//     >
-//       {childrenState.map((item,index)=>{
-//         return(
-//             <div
-//             className={"slider__item slider__item-active-" + (activeIndex + 1)}
-//             key={index}
-//           >
-//             {item}
-//           </div>
-//         )
-//       })}
-//       <div className="container__slider__links">
-//         {childrenState.map((item, index) => {
-//           return (
-//             <button
-//               key={index}
-//               className={
-//                 activeIndex === index
-//                   ? "container__slider__links-small container__slider__links-small-active"
-//                   : "container__slider__links-small"
-//               }
-//               onClick={(e) => {
-//                 e.preventDefault();
-//                 setActiveIndex(index);
-//               }}
-//             ></button>
-//           );
-//         })}
-//       </div>
-
-//       <button
-//         className="slider__btn-next"
-//         onClick={(e) => {
-//           e.preventDefault();
-//           slideNext();
-//         }}
-//       >
-//         {">"}
-//       </button>
-//       <button
-//         className="slider__btn-prev"
-//         onClick={(e) => {
-//           e.preventDefault();
-//           slidePrev();
-//         }}
-//       >
-//         {"<"}
-//       </button>
-//     </div>
-//   );
-// }
-
-// export default CustomCarousel;
-import React from 'react'
-
-export default function page() {
-  return (
-    <div>page</div>
-  )
+    return (
+        <div className="relative" style={{height:"80vh"}} onTouchStart={handleTouchStart} onTouchMove={handleTouchMove}>
+            <button className="absolute left-0 top-1/2 transform -translate-y-1/2 bg-gray-800 text-white px-4 py-2 rounded" onClick={prevSlide}>
+                Prev
+            </button>
+            <button className="absolute right-0 top-1/2 transform -translate-y-1/2 bg-gray-800 text-white px-4 py-2 rounded" onClick={nextSlide}>
+                Next
+            </button>
+            <div className="w-full h-full overflow-hidden">
+                <img
+                    src={images[currentSlide]}
+                    alt={`Slide ${currentSlide + 1}`}
+                    className="object-contain w-full h-full transition-opacity duration-1000"
+                    style={{ opacity: 1 }}
+                />
+            </div>
+        </div>
+    );
 }

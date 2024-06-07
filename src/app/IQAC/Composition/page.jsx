@@ -3,6 +3,7 @@ import PageHeader from '../../components/PageHead/page';
 import Link from 'next/link';
 
 export default function Page() {
+  
   return (
     <div className="body bg-mapBg">
       <PageHeader tab={"IQAC"} nestedTab={"Composition"}/>
