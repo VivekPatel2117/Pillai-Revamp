@@ -31,7 +31,7 @@ export default function Page({ images = [] }) {
 
     return (
         <div className="relative" style={{height:"80vh"}} onTouchStart={handleTouchStart} onTouchMove={handleTouchMove}>
-            <button className="absolute left-0 top-1/2 transform -translate-y-1/2 bg-gray-800 text-white px-4 py-2 rounded" onClick={prevSlide}>
+            <button className="absolute left-0 top-1/2 transform -translate-y-1/2 bg-gray-800 text-black px-4 py-2 rounded" onClick={prevSlide}>
                 Prev
             </button>
             <button className="absolute right-0 top-1/2 transform -translate-y-1/2 bg-gray-800 text-white px-4 py-2 rounded" onClick={nextSlide}>
