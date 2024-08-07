@@ -39,7 +39,18 @@
   .fade-out {
     animation: fadeOut 1s ease-out forwards;
 }
-
+.saveButton{
+  background-color: rgba(0, 128, 0, 0.637);
+  color: white;
+  padding: 0.5vh;
+  border-radius: 6px;
+}
+.editButton{
+  background-color: brown;
+  padding: 0.5vh;
+  border-radius: 6px;
+  color: white;
+}
 @keyframes fadeOut {
     from {
         opacity: 1;

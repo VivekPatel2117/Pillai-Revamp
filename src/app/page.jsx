@@ -13,7 +13,7 @@ import Workshop from "../images/workshops.png";
 import ImageWithHoverText from "./components/ImageWithHoverText/page";
 import Footer from "./components/footer/page";
 import Slider from "./components/Slider/page";
-export default function Home() {
+export default async function Home() {
   return (
     <>
       <div className="h-screen">
