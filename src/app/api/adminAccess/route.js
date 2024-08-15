@@ -1,11 +1,9 @@
-import dbConnect from "@/backend/lib/connect";
-import dbDisconnect from "@/backend/lib/disconnect";
 import UserDetail from "@/backend/models/user";
 import { NextResponse } from "next/server";
- 
+import { connectToDatabase } from "@/backend/lib/connect";
 export async function POST(request) {
     try {
-        const connection = await dbConnect();
+        await connectToDatabase()
         const requestData = await request.json();
         const {username,password} = requestData;
         const isUser = await UserDetail.findOne({username:username});
@@ -13,8 +11,7 @@ export async function POST(request) {
         if(isUser){
             if(password === isUser.password){
                 if(isUser.access === "BBA Honors"){
-                    const closeConnection = await dbDisconnect()
-                return NextResponse.redirect(new URL("/Programs/Bammc",request.url))
+                return NextResponse.json({message:true},{status:200})
             } 
             }else{
                 return NextResponse.json({message : "Password doesnt match"},{status:400})

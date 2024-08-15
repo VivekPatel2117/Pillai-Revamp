@@ -1,18 +1,5 @@
 import mongoose from 'mongoose';
 
-// const CourseSchema = new mongoose.Schema({
-//   'course-name': { type: String, required: true },
-//   'course-desc': { type: String, required: true },
-//   'course-vision': { type: String, required: true },
-//   'course-mission': { type: String, required: true },
-//   SEM1: { type: [String], required: true },
-//   SEM2: { type: [String], required: true },
-//   SEM3: { type: [String], required: true },
-//   SEM4: { type: [String], required: true },
-//   SEM5: { type: [String], required: true },
-//   SEM6: { type: [String], required: true },
-//   'course-pdf': { type: String, required: true },
-// });
 
 
 

@@ -1,8 +1,9 @@
 "use client"
 import axios from 'axios';
 import Head from 'next/head';
-
+import { useRouter } from 'next/navigation';
 export default function page() {
+  const router = useRouter();
     const handleLogin = async (e) => {
         e.preventDefault()
         const formData = new FormData(e.target)
@@ -11,7 +12,9 @@ export default function page() {
        if(username || password){
         const response = await axios.post("/api/adminAccess",{username,password});
         if(response.status == 200){
+          localStorage.setItem("access","admin")
           console.log("LOGGED IN");
+          router.push("/Programs")
         }else{
             return {error : "ERROR OCCURED"}
         }

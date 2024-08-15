@@ -1,10 +1,11 @@
 import React from 'react'
+import style from "./loader.module.css"
 
 export default function page() {
   return (
-        <div className="flex items-center justify-center h-screen">
-            <div className="animate-spin rounded-full h-20 w-20 border-t-2 border-b-2 border-gray-900"></div>
-        </div>
-
+    <div className='h-screen overflow-hidden'>
+      <div className={style.skeleton}></div>
+     <div className={style.skeleton}></div>
+     </div>
   )
 }

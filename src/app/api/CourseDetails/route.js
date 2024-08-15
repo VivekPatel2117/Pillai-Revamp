@@ -1,16 +1,13 @@
 import Course from "@/backend/models/course";
-import dbConnect from "@/backend/lib/connect";
-import dbDisconnect from "@/backend/lib/disconnect";
+import { connectToDatabase } from "@/backend/lib/connect";
 import { NextResponse } from "next/server";
 export  async function GET(request) {
 try {
- const connect = await dbConnect();
+  // await connectToDatabase()
   const url =  new URL(request.url)
   const subject = url.searchParams.get("subject");
   const data = await Course.findOne({courseName:subject});
-  console.log(data)
   if(data){
-    const disconnect = await dbDisconnect()
     return NextResponse.json(data,{status:200})
   }else{
     return NextResponse.json({error:"No course found"},{status:404});
@@ -22,7 +19,6 @@ try {
 }
 export async function POST(request) {
   try {
-   const connect = await dbConnect();
 
     const data = await request.json();
     const subject = data.subject
@@ -50,7 +46,6 @@ export async function POST(request) {
         }
       },
     );
-    console.log(result)
     if (result.matchedCount === 0) {
       return NextResponse.json({ message: "Course not found" }, { status: 404 });
     }

@@ -2,6 +2,10 @@
 @tailwind components;
 @tailwind utilities;
 /* styles/globals.css (or your custom CSS file) */
+
+body::-webkit-scrollbar{
+ display: none;
+}
 @keyframes marquee {
     0% {
       transform: translateX(100%);

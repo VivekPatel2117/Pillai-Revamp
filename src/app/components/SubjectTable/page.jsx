@@ -1,8 +1,9 @@
 "use client";
 import axios from 'axios';
+import Link from 'next/link';
 import React, { useState, useEffect } from 'react';
 
-export default function Page({ data, subject, isLoading }) {
+export default function Page({ data, subject, isLoading , isAdmin }) {
   const [editMode, setEditMode] = useState({
     courseDesc: false,
     courseVision: false,
@@ -10,6 +11,7 @@ export default function Page({ data, subject, isLoading }) {
     FY: false,
     SY: false,
     TY: false,
+    coursePdf: false
   });
 
   const [formData, setFormData] = useState({
@@ -19,6 +21,7 @@ export default function Page({ data, subject, isLoading }) {
     FY: data.FY,
     SY: data.SY,
     TY: data.TY,
+    coursePdf:data.coursePdf
   });
 
   useEffect(() => {
@@ -45,7 +48,6 @@ export default function Page({ data, subject, isLoading }) {
     console.log(formData);
     updateDb(formData);
 
-    // Add logic to save the updated data here, e.g., send it to an API
   };
   
   const handleChange = (field, value) => {
@@ -93,6 +95,8 @@ export default function Page({ data, subject, isLoading }) {
   };
 
   return (
+    <>
+    {isAdmin ? (
     <div>
       <div className="section1">
         <h1 className="text-2xl font-bold mt-4">About the course - {subject}</h1>
@@ -171,7 +175,25 @@ export default function Page({ data, subject, isLoading }) {
         <div className="subjects bg-mapBg">
           <div className="fy">
             <h1 className="flex justify-center text-2xl font-bold">
-              FY {subject}
+              FY {subject} - <a href={"www.google.com"}
+        target="_blank" 
+        rel="noopener noreferrer" 
+        className="text-blue-500 hover:underline">See Details</a> <br />
+        {editMode.coursePdf ? (
+                <>
+                <input
+                  type="text"
+                  value={formData.coursePdf}
+                  onChange={(e) => handleChange('coursePdf', e.target.value)}
+                />
+                <button className='saveButton' onClick={() => handleSaveClick('coursePdf')}>Save</button>
+              </>
+              ):(
+                <>
+                <button className='editButton' onClick={() => handleEditClick('coursePdf')}>Edit</button>
+                </>
+              ) }
+               
             </h1>
             <div className="subjects max-w-screen-md mx-auto">
               <table className="w-full">
@@ -226,5 +248,104 @@ export default function Page({ data, subject, isLoading }) {
         </div>
       </div>
     </div>
+    ):(
+      <div>
+  <div className="section1">
+    <h1 className="text-2xl font-bold mt-4">About the course - {subject}</h1>
+    <hr className="w-9/12 border-t-2 border-gray-400 mb-4 mt-4" />
+    <div>
+      <p>{formData.courseDesc}</p>
+    </div>
+    <br />
+    <button className="bg-marronDark text-white px-6 py-2 rounded-full">
+      Inquire Now
+    </button>
+  </div>
+
+  <div className="section2 grid grid-cols-1 lg:grid-cols-2 gap-8 mt-8">
+    <div className="left">
+      <h2 className="text-xl font-bold">Vision</h2>
+      <hr className="w-9/12 border-t-2 border-gray-400 mb-4 mt-4" />
+      <div>
+        <p>{formData.courseVision}</p>
+      </div>
+    </div>
+    <div className="right">
+      <h2 className="text-xl font-bold">Mission</h2>
+      <hr className="w-9/12 border-t-2 border-gray-400 mb-4" />
+      <div>
+        <p>{formData.courseMission}</p>
+      </div>
+    </div>
+  </div>
+
+  <div className="section3 mt-10 mb-8">
+    <h1 className="font-semibold text-lg">
+      List of Subjects for the Three Year {subject}
+    </h1>
+    <hr className="w-9/12 border-t-2 border-gray-400 mb-4" />
+    <div className="subjects bg-mapBg">
+      <div className="fy">
+        <h1 className="flex justify-center text-2xl font-bold">
+          FY {subject} - 
+          <a 
+            href={"www.google.com"}
+            target="_blank" 
+            rel="noopener noreferrer" 
+            className="text-blue-500 hover:underline"
+          >
+            See Details
+          </a>
+        </h1>
+        <div className="subjects max-w-screen-md mx-auto">
+          <table className="w-full">
+            <thead>
+              <tr>
+                <th className="px-2 py-2">Semester I</th>
+                <th className="px-2 py-2">Semester II</th>
+              </tr>
+            </thead>
+            <tbody>{renderTableRows('FY')}</tbody>
+          </table>
+        </div>
+      </div>
+      <div className="sy">
+        <h1 className="flex justify-center text-2xl font-bold mt-4">
+          SY {subject}
+        </h1>
+        <div className="subjects max-w-screen-md mx-auto">
+          <table className="w-full">
+            <thead>
+              <tr>
+                <th className="px-2 py-2">Semester III</th>
+                <th className="px-2 py-2">Semester IV</th>
+              </tr>
+            </thead>
+            <tbody>{renderTableRows('SY')}</tbody>
+          </table>
+        </div>
+      </div>
+      <div className="ty">
+        <h1 className="flex justify-center text-2xl font-bold mt-4">
+          TY {subject}
+        </h1>
+        <div className="subjects max-w-screen-md mx-auto">
+          <table className="w-full">
+            <thead>
+              <tr>
+                <th className="px-2 py-2">Semester V</th>
+                <th className="px-2 py-2">Semester VI</th>
+              </tr>
+            </thead>
+            <tbody>{renderTableRows('TY')}</tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+    )}
+    </>
   );
 }
