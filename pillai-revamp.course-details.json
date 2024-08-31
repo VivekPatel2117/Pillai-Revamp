@@ -1,0 +1,242 @@
+[{
+  "_id": {
+    "$oid": "66af8fe4c684fb5b5c3a5c06"
+  },
+  "FY": [
+    {
+      "SEM1": "Financial Accounting",
+      "SEM2": "Financial Accounting",
+      "_id": {
+        "$oid": "66b31cde216ecfaeec9a928c"
+      }
+    },
+    {
+      "SEM1": "Commerce",
+      "SEM2": "Commerce",
+      "_id": {
+        "$oid": "66b31cde216ecfaeec9a928d"
+      }
+    },
+    {
+      "SEM1": "Business Economics",
+      "SEM2": "Commerce",
+      "_id": {
+        "$oid": "66b31cde216ecfaeec9a928e"
+      }
+    },
+    {
+      "SEM1": "Business Statistics",
+      "SEM2": "Financial Accounting",
+      "_id": {
+        "$oid": "66b31cde216ecfaeec9a928f"
+      }
+    },
+    {
+      "SEM1": "From the pool - Foundation Course IIHealth and Wellness",
+      "SEM2": "Financial Accounting",
+      "_id": {
+        "$oid": "66b31cde216ecfaeec9a9290"
+      }
+    }
+  ],
+  "SY": [
+    {
+      "SEM1": "Financial Accounting",
+      "SEM2": "Financial Accounting",
+      "_id": {
+        "$oid": "66b31cde216ecfaeec9a9291"
+      }
+    },
+    {
+      "SEM1": "Commerce",
+      "SEM2": "Commerce",
+      "_id": {
+        "$oid": "66b31cde216ecfaeec9a9292"
+      }
+    },
+    {
+      "SEM1": "Business Economics",
+      "SEM2": "Commerce",
+      "_id": {
+        "$oid": "66b31cde216ecfaeec9a9293"
+      }
+    },
+    {
+      "SEM1": "Business Statistics",
+      "SEM2": "Financial Accounting",
+      "_id": {
+        "$oid": "66b31cde216ecfaeec9a9294"
+      }
+    },
+    {
+      "SEM1": "From the pool - Foundation Course IIHealth and Wellness",
+      "SEM2": "Financial Accounting",
+      "_id": {
+        "$oid": "66b31cde216ecfaeec9a9295"
+      }
+    }
+  ],
+  "TY": [
+    {
+      "SEM1": "Financial Accounting",
+      "SEM2": "Financial Accounting",
+      "_id": {
+        "$oid": "66b31cde216ecfaeec9a9296"
+      }
+    },
+    {
+      "SEM1": "Commerce",
+      "SEM2": "Commerce",
+      "_id": {
+        "$oid": "66b31cde216ecfaeec9a9297"
+      }
+    },
+    {
+      "SEM1": "Business Economics",
+      "SEM2": "Commerce",
+      "_id": {
+        "$oid": "66b31cde216ecfaeec9a9298"
+      }
+    },
+    {
+      "SEM1": "Business Statistics",
+      "SEM2": "Financial Accounting",
+      "_id": {
+        "$oid": "66b31cde216ecfaeec9a9299"
+      }
+    },
+    {
+      "SEM1": "From the pool - Foundation Course IIHealth and Wellness",
+      "SEM2": "Financial Accounting",
+      "_id": {
+        "$oid": "66b31cde216ecfaeec9a929a"
+      }
+    }
+  ],
+  "courseDesc": "BBa is good",
+  "courseMission": "Vivek",
+  "courseName": "BAMMC",
+  "coursePdf": ".pdf",
+  "courseVision": "VIVEK"
+},
+{
+  "_id": {
+    "$oid": "66bde57b1956c63dbc9a2f1e"
+  },
+  "FY": [
+    {
+      "SEM1": "Financial Accounting",
+      "SEM2": "Financial Accounting",
+      "_id": {
+        "$oid": "66b31cde216ecfaeec9a928c"
+      }
+    },
+    {
+      "SEM1": "Commerce",
+      "SEM2": "Commerce",
+      "_id": {
+        "$oid": "66b31cde216ecfaeec9a928d"
+      }
+    },
+    {
+      "SEM1": "Business Economics",
+      "SEM2": "Commerce",
+      "_id": {
+        "$oid": "66b31cde216ecfaeec9a928e"
+      }
+    },
+    {
+      "SEM1": "Business Statistics",
+      "SEM2": "Financial Accounting",
+      "_id": {
+        "$oid": "66b31cde216ecfaeec9a928f"
+      }
+    },
+    {
+      "SEM1": "From the pool - Foundation Course IIHealth and Wellness",
+      "SEM2": "Financial Accounting",
+      "_id": {
+        "$oid": "66b31cde216ecfaeec9a9290"
+      }
+    }
+  ],
+  "SY": [
+    {
+      "SEM1": "Financial Accounting",
+      "SEM2": "Financial Accounting",
+      "_id": {
+        "$oid": "66b31cde216ecfaeec9a9291"
+      }
+    },
+    {
+      "SEM1": "Commerce",
+      "SEM2": "Commerce",
+      "_id": {
+        "$oid": "66b31cde216ecfaeec9a9292"
+      }
+    },
+    {
+      "SEM1": "Business Economics",
+      "SEM2": "Commerce",
+      "_id": {
+        "$oid": "66b31cde216ecfaeec9a9293"
+      }
+    },
+    {
+      "SEM1": "Business Statistics",
+      "SEM2": "Financial Accounting",
+      "_id": {
+        "$oid": "66b31cde216ecfaeec9a9294"
+      }
+    },
+    {
+      "SEM1": "From the pool - Foundation Course IIHealth and Wellness",
+      "SEM2": "Financial Accounting",
+      "_id": {
+        "$oid": "66b31cde216ecfaeec9a9295"
+      }
+    }
+  ],
+  "TY": [
+    {
+      "SEM1": "Financial Accounting",
+      "SEM2": "Financial Accounting",
+      "_id": {
+        "$oid": "66b31cde216ecfaeec9a9296"
+      }
+    },
+    {
+      "SEM1": "Commerce",
+      "SEM2": "Commerce",
+      "_id": {
+        "$oid": "66b31cde216ecfaeec9a9297"
+      }
+    },
+    {
+      "SEM1": "Business Economics",
+      "SEM2": "Commerce",
+      "_id": {
+        "$oid": "66b31cde216ecfaeec9a9298"
+      }
+    },
+    {
+      "SEM1": "Business Statistics",
+      "SEM2": "Financial Accounting",
+      "_id": {
+        "$oid": "66b31cde216ecfaeec9a9299"
+      }
+    },
+    {
+      "SEM1": "From the pool - Foundation Course IIHealth and Wellness",
+      "SEM2": "Financial Accounting",
+      "_id": {
+        "$oid": "66b31cde216ecfaeec9a929a"
+      }
+    }
+  ],
+  "courseDesc": "BBa is good",
+  "courseMission": "Vivek",
+  "courseName": "MAMMC",
+  "coursePdf": ".pdf",
+  "courseVision": "VIVEK"
+}]
