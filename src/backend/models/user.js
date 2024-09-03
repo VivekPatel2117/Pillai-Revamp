@@ -7,8 +7,6 @@ const userDetialSchema = new mongoose.Schema({
     },
     email: {
       type: String,
-      required: true,
-      unique: true,
     },
     access: {
       type: String,
