@@ -12,6 +12,7 @@ export const connectToDatabase = async () => {
     const db = await mongoose.connect(process.env.MONGODB_URI, {
       useNewUrlParser: true,
       useUnifiedTopology: true,
+      dbName: 'pillai-revamp'
     });
     
     isConnected = db.connections[0].readyState;
