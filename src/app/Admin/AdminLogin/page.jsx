@@ -10,7 +10,7 @@ export default function page() {
         const username = formData.get("username");
         const password = formData.get("password");
        if(username || password){
-        const response = await axios.post("/api/adminAccess",{username,password,email:"admin@gmail.com"});
+        const response = await axios.post("/api/adminAccess",{username,password,email:"admin@gmail.com",});
         if(response.status == 200){
           localStorage.setItem("access","admin")
           console.log("LOGGED IN");
