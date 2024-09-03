@@ -20,6 +20,7 @@ export default function SubjectTable({ data, subject, isLoading , isAdmin }) {
     if (data === null || subject === null) {
       return;
     }else{
+      console.log(data)
       setFormData({
         courseDesc: data.courseDesc,
         courseVision: data.courseVision,

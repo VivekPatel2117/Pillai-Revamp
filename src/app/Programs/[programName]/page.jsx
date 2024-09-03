@@ -15,14 +15,15 @@ export default function page({params}) {
       const admin = localStorage.getItem("access");
       setadminAccess(admin === "admin" ? true : false)
       setFetchedData(response.data);
+      console.log(response.data)
       setIsLoading(false)
       return response.data
     }else if(response.status === 404){
       console.log("Error occured")
     }
    }
-   useEffect(() => {
-     fetchData()
+   useEffect(async() => {
+      await fetchData();
    }, [])
    
  
