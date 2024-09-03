@@ -239,11 +239,94 @@ export default function SubjectTable({ data, subject, isLoading, isAdmin }) {
         </div>
       ) : (
         <div>
-          <h1>Welcome</h1>
+        <div className="section1">
+          <h1 className="text-2xl font-bold mt-4">About the course - {subject}</h1>
+          <hr className="w-9/12 border-t-2 border-gray-400 mb-4 mt-4" />
+          <div>
+                <p>{formData.courseDesc}</p>
+          </div>
+          <br />
           <button className="bg-marronDark text-white px-6 py-2 rounded-full">
             Inquire Now
           </button>
         </div>
+        <div className="section2 grid grid-cols-1 lg:grid-cols-2 gap-8 mt-8">
+          <div className="left">
+            <h2 className="text-xl font-bold">Vision</h2>
+            <hr className="w-9/12 border-t-2 border-gray-400 mb-4 mt-4" />
+            <div>
+                  <p>{formData.courseVision}</p>
+            </div>
+          </div>
+          <div className="right">
+            <h2 className="text-xl font-bold">Mission</h2>
+            <hr className="w-9/12 border-t-2 border-gray-400 mb-4" />
+            <div>
+             <p>{formData.courseMission}</p>
+            </div>
+          </div>
+        </div>
+        <div className="section3 mt-10 mb-8">
+          <h1 className="font-semibold text-lg">
+            List of Subjects for the Three Year {subject}
+          </h1>
+          <hr className="w-9/12 border-t-2 border-gray-400 mb-4" />
+          <div className="subjects bg-mapBg">
+            <div className="fy">
+              <h1 className="flex justify-center text-2xl font-bold">
+                FY {subject} - <a href={"www.google.com"}
+      target="_blank" 
+      rel="noopener noreferrer" 
+      className="text-blue-500 hover:underline">See Details</a> <br />
+      <p>{formData.coursePdf}</p>
+              </h1>
+              <div className="subjects max-w-screen-md mx-auto">
+                <table className="w-full">
+                  <thead>
+                    <tr>
+                      <th className="px-2 py-2">Semester I</th>
+                      <th className="px-2 py-2">Semester II</th>
+                    </tr>
+                  </thead>
+                  <tbody>{renderTableRows('FY')}</tbody>
+                </table>
+              </div>
+            </div>
+            <div className="sy">
+              <h1 className="flex justify-center text-2xl font-bold mt-4">
+                SY {subject}
+              </h1>
+              <div className="subjects max-w-screen-md mx-auto">
+                <table className="w-full">
+                  <thead>
+                    <tr>
+                      <th className="px-2 py-2">Semester III</th>
+                      <th className="px-2 py-2">Semester IV</th>
+                    </tr>
+                  </thead>
+                  <tbody>{renderTableRows('SY')}</tbody>
+                </table>
+              </div>
+            </div>
+            <div className="ty">
+              <h1 className="flex justify-center text-2xl font-bold mt-4">
+                TY {subject}
+              </h1>
+              <div className="subjects max-w-screen-md mx-auto">
+                <table className="w-full">
+                  <thead>
+                    <tr>
+                      <th className="px-2 py-2">Semester V</th>
+                      <th className="px-2 py-2">Semester VI</th>
+                    </tr>
+                  </thead>
+                  <tbody>{renderTableRows('TY')}</tbody>
+                </table>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
       )}
     </>
   );
