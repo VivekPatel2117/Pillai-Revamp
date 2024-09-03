@@ -51,7 +51,7 @@ export default function page() {
                 <li className="hover:underline">Admissions</li>
                 <li className="hover:underline">IQAC</li>
                 <li className="hover:underline">Community</li>
-                <li className="hover:underline"><Link to={"/Admin/AdminLogin/"}>Admin Login</Link></li>
+                <li className="hover:underline"><Link href={"/Admin/AdminLogin/"}>Admin Login</Link></li>
               </ul>
             </div>
           </div>

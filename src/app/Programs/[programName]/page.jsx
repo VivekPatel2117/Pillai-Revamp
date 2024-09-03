@@ -4,7 +4,7 @@ import PageHeader from "../../components/PageHead/page";
 import Footer from '../../components/footer/page';
 import axios from "axios";
 import Loader from "../../components/Loader/page"
-import SubjectTable from "../../components/SubjectTable/page"
+import SubjectTable from "../../components/SubjectTable/SubjectTable"
 export default function page({params}) {
   const [fetchedData, setFetchedData] = useState([]);
   const [isLoading, setIsLoading] = useState(true);

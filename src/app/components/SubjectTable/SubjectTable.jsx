@@ -3,30 +3,32 @@ import axios from 'axios';
 import Link from 'next/link';
 import React, { useState, useEffect } from 'react';
 
-export default function Page({ data, subject, isLoading , isAdmin }) {
+export default function SubjectTable({ data, subject, isLoading , isAdmin }) {
   const [editMode, setEditMode] = useState({
-    courseDesc: false,
-    courseVision: false,
-    courseMission: false,
-    FY: false,
-    SY: false,
-    TY: false,
-    coursePdf: false
+    "courseDesc": false,
+    "courseVision": false,
+    "courseMission": false,
+    "FY": false,
+    "SY": false,
+    "TY": false,
+    "coursePdf": false
   });
 
-  const [formData, setFormData] = useState({
-    courseDesc: data.courseDesc,
-    courseVision: data.courseVision,
-    courseMission: data.courseMission,
-    FY: data.FY,
-    SY: data.SY,
-    TY: data.TY,
-    coursePdf:data.coursePdf
-  });
+  const [formData, setFormData] = useState();
 
   useEffect(() => {
     if (data === null || subject === null) {
       return;
+    }else{
+      setFormData({
+        courseDesc: data.courseDesc,
+        courseVision: data.courseVision,
+        courseMission: data.courseMission,
+        FY: data.FY,
+        SY: data.SY,
+        TY: data.TY,
+        coursePdf:data.coursePdf
+      })
     }
   }, [data, subject]);
   const updateDb = async(data) => {
