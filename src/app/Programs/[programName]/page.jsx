@@ -10,16 +10,17 @@ export default function page({params}) {
   const [isLoading, setIsLoading] = useState(true);
   const [adminAccess, setadminAccess] = useState(false);
    const fetchData = async () => {
-    const response = await axios.get(`/api/CourseDetails?subject=${params.programName}`);
-    if(response.status === 200){
-      const admin = localStorage.getItem("access");
-      setadminAccess(admin === "admin" ? true : false)
-      setFetchedData(response.data);
-      console.log(response.data)
-      setIsLoading(false)
-    }else if(response.status === 404){
-      console.log("Error occured")
-    }
+    axios.get(`/api/CourseDetails?subject=${params.programName}`).then((response)=>{
+      if(response.status === 200){
+        const admin = localStorage.getItem("access");
+        setadminAccess(admin === "admin" ? true : false)
+        setFetchedData(response.data);
+        console.log(response.data)
+        setIsLoading(false)
+      }else if(response.status === 404){
+        console.log("Error occured")
+      }
+    });
    }
    useEffect(() => {
       fetchData();

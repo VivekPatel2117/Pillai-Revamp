@@ -1,6 +1,8 @@
 "use client";
 import axios from 'axios';
 import React, { useState, useEffect } from 'react';
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 export default function SubjectTable({ data, subject, isLoading, isAdmin }) {
   const [editMode, setEditMode] = useState({
@@ -24,8 +26,10 @@ export default function SubjectTable({ data, subject, isLoading, isAdmin }) {
   const updateDb = async (data) => {
     const response = await axios.post("/api/CourseDetails", { data, subject });
     if (response.status === 200) {
+      toast.success("Updated Database",{autoClose:3000,position:"top-center"})
       console.log("DB updated");
     } else {
+      toast.error("Error while updating Database",{autoClose:3000,position:"top-center"})
       console.log("Error while updating DB");
     }
   };
@@ -86,6 +90,7 @@ export default function SubjectTable({ data, subject, isLoading, isAdmin }) {
 
   return (
     <>
+    <ToastContainer/>
       {isAdmin ? (
         <div>
           <div className="section1">

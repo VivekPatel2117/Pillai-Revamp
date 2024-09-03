@@ -2,6 +2,9 @@
 import axios from 'axios';
 import Head from 'next/head';
 import { useRouter } from 'next/navigation';
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
+  
 export default function page() {
   const router = useRouter();
     const handleLogin = async (e) => {
@@ -10,17 +13,22 @@ export default function page() {
         const username = formData.get("username");
         const password = formData.get("password");
        if(username || password){
-        const response = await axios.post("/api/adminAccess",{username,password,email:"admin@gmail.com",});
-        if(response.status == 200){
-          localStorage.setItem("access","admin")
-          console.log("LOGGED IN");
-          router.push("/Programs")
-        }else{
-            return {error : "ERROR OCCURED"}
-        }
+        axios.post("/api/adminAccess",{username,password,email:"admin@gmail.com",}).then((response)=>{
+          if(response.status == 200){
+            toast.success("Logging you in",{autoClose:3000,position:"top-center"})
+            localStorage.setItem("access","admin")
+            console.log("LOGGED IN");
+            router.push("/Programs")
+          }
+        }).catch((error)=>{
+            toast.error("Error",{autoClose:3000,position:"top-center"})
+              return {error : "ERROR OCCURED"}
+        });
        }
     }
   return (
+    <>
+    <ToastContainer/>
     <div className="min-h-screen flex items-center justify-center bg-gray-100">
       <Head>
         <title>Admin Login</title>
@@ -61,5 +69,6 @@ export default function page() {
         </form>
       </div>
     </div>
+    </>
   );
 }
