@@ -13,24 +13,13 @@ export default function SubjectTable({ data, subject, isLoading, isAdmin }) {
     coursePdf: false
   });
 
-  const [formData, setFormData] = useState();
-
-  useEffect(() => {
-    if (data === null || subject === null) {
-      return;
-    } else {
-      console.log(data);
-      setFormData({
-        courseDesc: data.courseDesc,
-        courseVision: data.courseVision,
-        courseMission: data.courseMission,
-        FY: data.FY,
-        SY: data.SY,
-        TY: data.TY,
-        coursePdf: data.coursePdf
-      });
-    }
-  }, [data, subject]);
+  const [formData, setFormData] = useState({courseDesc: data.courseDesc,
+    courseVision: data.courseVision,
+    courseMission: data.courseMission,
+    FY: data.FY,
+    SY: data.SY,
+    TY: data.TY,
+    coursePdf: data.coursePdf});
 
   const updateDb = async (data) => {
     const response = await axios.post("/api/CourseDetails", { data, subject });

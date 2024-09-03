@@ -17,13 +17,12 @@ export default function page({params}) {
       setFetchedData(response.data);
       console.log(response.data)
       setIsLoading(false)
-      return response.data
     }else if(response.status === 404){
       console.log("Error occured")
     }
    }
-   useEffect(async() => {
-      await fetchData();
+   useEffect(() => {
+      fetchData();
    }, [])
    
  
