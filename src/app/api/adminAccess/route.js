@@ -6,6 +6,8 @@ export async function POST(request) {
         await connectToDatabase()
         const requestData = await request.json();
         const {username,password} = requestData;
+        const allUser = await UserDetail.find();
+        console.log(allUser)
         const isUser = await UserDetail.findOne({username:username});
         console.log(isUser,"HEllo")
         if(isUser){
