@@ -3,7 +3,7 @@ import { connectToDatabase } from "@/backend/lib/connect";
 import { NextResponse } from "next/server";
 export  async function GET(request) {
 try {
-  // await connectToDatabase()
+  await connectToDatabase()
   const url =  new URL(request.url)
   const subject = url.searchParams.get("subject");
   const data = await Course.findOne({courseName:subject});
